@@ -1,0 +1,13 @@
+{
+    "phpunit.command": "docker exec -t example-phpunit-test-1 /bin/bash -c",
+    "phpunit.php": "php",
+    "phpunit.phpunit": "vendor/bin/phpunit",
+    "phpunit.args": [
+        "-c",
+        "phpunit.xml"
+    ],
+    "phpunit.debuggerConfig": "PHPUnit",
+    "phpunit.paths": {
+        "${workspaceFolder}": "/app"
+    }
+}
