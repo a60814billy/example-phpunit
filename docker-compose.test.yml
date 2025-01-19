@@ -1,0 +1,20 @@
+services:
+  test:
+    image: php:7.4-cli
+    entrypoint: /bin/bash
+    tty: true
+    working_dir: /app
+    environment:
+      - TEST_NAME=Scarlett
+    command:
+      - -c
+      - |
+        set -x
+        # install xdebug and composer
+        pecl install xdebug-3.1.6
+        docker-php-ext-enable xdebug
+        echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+        echo "Container is ready!"
+        sleep 100d
+    volumes:
+      - .:/app
